@@ -1,0 +1,41 @@
+body {
+    background: #CCCCFF;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+h1, p {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 32pt;
+    margin: 0px;
+    text-align: center;
+}
+
+p {
+    font-size: 14pt;
+}
+
+textarea {
+    width: 90%;
+    height: 400px;
+    background: white;
+    display: block;
+    margin: auto;
+    outline: none;
+    font-size: 12pt;
+    font-family: monospace;
+}
+
+fieldset {
+    width: 15%;
+    border: 5px solid black;
+    display: block;
+    float: left;
+    vertical-align: top;
+    text-align: center;
+}
