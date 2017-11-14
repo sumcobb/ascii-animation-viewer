@@ -32,10 +32,14 @@ textarea {
 }
 
 fieldset {
-    width: 15%;
     border: 5px solid black;
-    display: block;
-    float: left;
-    vertical-align: top;
+    display: inline-block;
+}
+
+.behavior {
     text-align: center;
+}
+
+.behaviorcontrols {
+    display: inline-block;
 }
