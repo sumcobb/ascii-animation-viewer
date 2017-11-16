@@ -13,7 +13,7 @@ var frames = null;
 
 var speed = 250;
 
-/* on click, calls function */
+/* On click event handler function for start and stop buttons. */
 $("#startButton").on('click', start);
 $("#stopButton").on('click', stop);
 
@@ -85,7 +85,8 @@ $("#check").on('click', function () {
         speed = 250;
     }
 
-    if(intervalId != null) {
+    // ensure checking turbo doesn't start animation if not going
+    if(intervalId != null && intervalId != 0) {
         stop();
         start();
     }
