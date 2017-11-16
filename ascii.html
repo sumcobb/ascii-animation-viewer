@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Summer Turner
+CSCI 342 Web Scripting, Fall 2017
+ASCII Animation Viewer
+-->
 <html>
 <head>
     <title>ASCII Animation Viewer</title>
@@ -8,9 +13,10 @@
 
     <h1>CSCI 342 ASCII Animation Viewer</h1>
 
-    <textarea rows="20" cols="80" name="textarea"></textarea>
+    <textarea id="textarea" rows="20" cols="80" name="textarea"></textarea>
 
     <div class="behavior">
+        <div class="behaviorcontrols">
         <fieldset>
             <legend>Play Controls:</legend>
             <button type="button" id="startButton">Start</button>
@@ -32,12 +38,12 @@
         <fieldset>
             <legend>Size:</legend>
             <select id="selectFontSize">
-                <option value="tiny">TINY</option>
-                <option value="small">SMALL</option>
-                <option value="medium" selected>MEDIUM</option>
-                <option value="large">LARGE</option>
-                <option value="xl">EXTRA LARGE</option>
-                <option value="xxl">XXL</option>
+                <option value="7pt">TINY</option>
+                <option value="10pt">SMALL</option>
+                <option value="12pt" selected>MEDIUM</option>
+                <option value="16pt">LARGE</option>
+                <option value="24pt">EXTRA LARGE</option>
+                <option value="32pt">XXL</option>
             </select>
         </fieldset>
 
@@ -46,12 +52,12 @@
             <input type="checkbox" id="check">Turbo
         </feildset>
     </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="animations.js"></script>
+    <script src="myanimation.js"></script>
     <script src="ascii.js"></script>
 
-
 </body>
-
 </html>
