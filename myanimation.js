@@ -1,7 +1,6 @@
 /* Summer Turner
  * CSCI 342: Web Scripting, Fall 2017
- *
- * My custom animation.
+ * My custom animation, a train.
  */
 
  var CUSTOM =
@@ -39,7 +38,7 @@
  "                .--.  \n" +
  "               __||__ \n" +
  "              o)__ |_ \n" +
- "____________< o (*)\n" +
+ " ___________< o (*)\n" +
  "=====\n" +
  "\n" +
  "\n" +

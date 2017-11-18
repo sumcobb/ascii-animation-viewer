@@ -1,21 +1,18 @@
 /* Summer Turner
  * CSCI 342: Web Scripting, Fall 2017
- *
- * ASCII Animation Viewer to test understandning of JavaScript and its
+ * ASCII Animation Viewer to test understanding of JavaScript and its
  * interaction with HTML user interfaces.
  */
-
 "use strict";
 
 var intervalId = null;
 var index = null;
 var frames = null;
-
 var speed = 250;
 
 /* On click event handler function for start and stop buttons. */
-$("#startButton").on('click', start);
-$("#stopButton").on('click', stop);
+$("#startButton").on("click", start);
+$("#stopButton").on("click", stop);
 
 /* Start
  * When clicked the animation begins, start button and select box are disabled.
@@ -25,7 +22,7 @@ function start() {
     document.getElementById("stopButton").disabled = false;
 	document.getElementById("selectAnimation").disabled = true;
 
-    if(frames == null) {
+    if (frames === null) {
         frames = document.getElementById("textarea").value.split("=====\n");
     }
 
@@ -48,7 +45,7 @@ function stop() {
  * Function to loop the animation and change the text area to the value.
  */
 function loop() {
-    if(index < frames.length-1) {
+    if (index < frames.length - 1) {
         index++;
     } else {
         index = 0;
@@ -59,34 +56,36 @@ function loop() {
 /* Select Animation
  * Attach an event handler function for changing the animation selection box.
  */
-$("#selectAnimation").on('change', function () {
+$("#selectAnimation").on("change", function () {
     var animation = $("#selectAnimation").val();
     var text = ANIMATIONS[animation];
-    $("textarea").html(text);
+    document.getElementById("textarea").value = text;
     frames = text.split("=====\n");
+    index = 0;
+    intervalId = 0;
 });
 
 /* Select Font Size
  * Attach an event handler function for changing the font selection box.
  */
-$("#selectFontSize").on('change', function () {
-    var size = $("textarea").css('font-size');
+$("#selectFontSize").on("change", function () {
+    var size = $("textarea").css("font-size");
     var newSize = $("#selectFontSize").val();
-    $("textarea").css('font-size', newSize);
+    $("textarea").css("font-size", newSize);
 });
 
 /* Select Turbo
  * Attach an event handler function for clicking the turbo checkbox.
  */
-$("#check").on('click', function () {
-    if($('input[type=checkbox]').prop('checked')) {
+$("#check").on("click", function () {
+    if ($("input[type=checkbox]").prop("checked")) {
         speed = 50;
     } else {
         speed = 250;
     }
 
-    // ensure checking turbo doesn't start animation if not going
-    if(intervalId != null && intervalId != 0) {
+    // ensure checking turbo doesn't start animation if not already going
+    if (intervalId !== null && intervalId !== 0) {
         stop();
         start();
     }
